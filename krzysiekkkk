@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krzysztof Lisiak | Personal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0077b6; /* Kolor przewodni */
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --accent: #00b4d8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Tło z efektem poświaty */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Sekcja O Mnie / Bio */
+        .content-section {
+            padding: 100px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        /* Karty Umiejętności */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            background: rgba(0, 180, 216, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* Kontakt i Przyciski */
+        .cta-buttons {
+            margin-top: 40px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(0, 180, 216, 0.5);
+            transform: scale(1.05);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        footer {
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .profile-box { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header>
+        <div class="container">
+            <div class="profile-box">
+                <p class="subtitle">Witaj, nazywam się</p>
+                <h1>Krzysztof Lisiak</h1>
+                <p style="font-size: 1.5rem; opacity: 0.8;">Specjalista IT | Manager Projektów | Entuzjasta Technologii</p>
+                
+                <div class="cta-buttons">
+                    <a href="#kontakt" class="btn btn-primary">Skontaktuj się</a>
+                    <a href="#o-mnie" class="btn btn-outline">Dowiedz się więcej</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- O MNIE SECTION -->
+    <section id="o-mnie" class="content-section">
+        <div class="container">
+            <div class="grid">
+                <div class="about-text">
+                    <h2>O mnie</h2>
+                    <p>
+                        Jestem studentem I roku inżynierii środowiska, interesuje się OZE oraz klimatyzacją. W wolnym czasie pasjonuje mnie sport, szczególnie piłka nożna.
+                    </p>
+                    <p>
+                        Wierzę w ciągły rozwój i naukę nowych technologii, co pozwala mi utrzymywać najwyższą jakość świadczonych usług.
+                    </p>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <strong>Prawo jazdy</strong>
+                        <p>kat B</p>
+                    </div>
+                    <div class="skill-card">
+                        <strong>Technologie</strong>
+                        <p>AutoCAD, Python</p>
+                    </div>
+                    <div class="skill-card">
+                        <strong>Języki</strong>
+                        <p>Angielski</p>
+                    </div>
+                    <div class="skill-card">
+                        <strong>Soft Skills</strong>
+                        <p>Kontaktowy, punktualny</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT SECTION -->
+    <section id="kontakt" class="content-section" style="background: rgba(255,255,255,0.02)">
+        <div class="container" style="text-align: center;">
+            <h2>Zostańmy w kontakcie</h2>
+            <p style="margin-bottom: 40px;">Chętnie porozmawiam o nowych projektach i możliwościach współpracy.</p>
+            
+            <div class="cta-buttons" style="flex-wrap: wrap;">
+                <a href="mailto:klisiak17@gmail.com" class="btn btn-outline">✉ klisiak17@gmail.com</a>
+                <a href="tel:+48123456789" class="btn btn-outline">📞 +48 123 456 789</a>
+                <a href="https://linkedin.com/in/krzysztoflisiak" class="btn btn-primary">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Krzysztof Lisiak. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
